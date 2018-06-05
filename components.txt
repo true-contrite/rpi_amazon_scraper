@@ -1,0 +1,3 @@
+#component, amazon.co.uk URL
+processor, https://www.amazon.co.uk/Intel-BX80684I78700-Core-i7-8700-Processor/dp/B07598HLB4/
+gpu, https://www.amazon.co.uk/NVIDIA-GeForce-PH-GTX1050TI-4G-Express-Graphics/dp/B01MFBKRI5/
