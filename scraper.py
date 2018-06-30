@@ -64,6 +64,25 @@ def write_file(name, price):
 
 ################################################################################
 
+def price_check(component, curr_price):
+
+    try:
+        with open(component) as inputfile:
+            lines = inputfile.readlines()
+            lastlinesplit = lines[-1].split()
+            oldprice = float(lastlinesplit[2])
+
+            if curr_price == oldprice:
+                return "SAME"
+            elif curr_price > oldprice:
+                return "HIGHER"
+            elif curr_price < oldprice:
+                return "LOWER"
+    except:
+        return "COMP FAIL"
+
+################################################################################
+
 if __name__ == "__main__":
 
     print("----------Amazon-Price-Tracker----------\n")
@@ -71,6 +90,10 @@ if __name__ == "__main__":
     if "-f" in sys.argv:
         filename = sys.argv[sys.argv.index("-f") + 1]
         main_dico = parse_file(filename)
+
+    else:
+        print("Please specify a file by using -f followed by the filename.")
+        print("To specify a time between price checks, use -t followed by the desired time in seconds.")
 
     if "-t" in sys.argv:
         wait_time = int(sys.argv[sys.argv.index("-t") + 1])
@@ -82,16 +105,13 @@ if __name__ == "__main__":
     while True:
 
         for component in main_dico:
+            print(component)
             soup = get_soup(main_dico[component])
             name = get_name(soup)
             price = get_price(soup)
             print(name)
-            print("£" + str(price) + "\n")
+            print("£" + str(price) + " [" + price_check(component, price) + "]\n")
 
             write_file(component, price)
         print("----------------------------------------")
         time.sleep(wait_time)
-
-    else:
-        print("Please specify a file by using -f followed by the filename.")
-        print("To specify a time between price checks, use -t followed by the desired time in seconds.")

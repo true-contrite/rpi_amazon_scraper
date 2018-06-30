@@ -2,3 +2,4 @@
 processor, https://www.amazon.co.uk/Intel-BX80684I78700-Core-i7-8700-Processor/dp/B07598HLB4/
 gpu, https://www.amazon.co.uk/NVIDIA-GeForce-PH-GTX1050TI-4G-Express-Graphics/dp/B01MFBKRI5/
 ram, https://www.amazon.co.uk/Corsair-CMK16GX4M2B3000C15-Vengeance-Performance-Desktop/dp/B0134EW7G8/
+gpu_1060, https://www.amazon.co.uk/ASUS-PH-GTX1060-3G-GeForce-GDDR5-Graphics/dp/B07252CNW8/
